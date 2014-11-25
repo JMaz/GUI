@@ -1,5 +1,8 @@
 package com.jamasztal;
 
+import java.io.File;
+import java.net.URL;
+
 import javafx.application.*;
 import javafx.stage.*;
 import javafx.scene.*;
@@ -28,7 +31,7 @@ public class CountdownGUI extends Application
 	public void start(final Stage theStage) 
 	{
 		theStage.setTitle("Final Countdown");
-
+		
 		Group root = new Group();
 		Scene theScene = new Scene(root);
 
@@ -36,9 +39,25 @@ public class CountdownGUI extends Application
 		mainBox.setPadding(new Insets(10));  
 		mainBox.setSpacing(10);               
 		mainBox.setAlignment(Pos.CENTER);
-
-		root.getChildren().add(mainBox);
-
+		mainBox.setMinHeight(400);
+		mainBox.setMinWidth(400);
+		
+		mainBox.getStyleClass().add("vbox");
+		root.getChildren().add(mainBox);		
+		
+		try
+        {
+			
+            File cssFile = new File("res/style.css");
+            URL  cssURL  = cssFile.toURI().toURL();   
+            theScene.getStylesheets().clear();
+            theScene.getStylesheets().add( cssURL.toString() );
+        }
+        catch (Exception ex)
+        {
+            System.out.println("Couldn't find/parse stylesheet file.");
+            ex.printStackTrace();
+        }
 		// code -------------------------------------------------
 
 		Countdown cd = new Countdown();
@@ -82,8 +101,16 @@ public class CountdownGUI extends Application
 					}
 				});
 
-		mainBox.getChildren().addAll( timeDisplay, allButton, resetButton );
+		mainBox.getChildren().addAll( timeDisplay );
 
+		final HBox controlBox = new HBox();
+		controlBox.setPadding(new Insets(10));  
+		controlBox.setSpacing(10);               
+		controlBox.setAlignment(Pos.CENTER);
+		
+		controlBox.getChildren().addAll( allButton, resetButton );
+		mainBox.getChildren().addAll( controlBox );
+		
 		final HBox setTimeBox = new HBox();
 		setTimeBox.setPadding(new Insets(10));  
 		setTimeBox.setSpacing(10);               
@@ -121,11 +148,11 @@ public class CountdownGUI extends Application
 					public void handle(ActionEvent ae)
 					{
 						if(cd.getCountdownTime() <= 0){
-							String displayText = "Time: 0";
+							String displayText = "0";
 							timeDisplay.setText( displayText );
 						}else{
 							cd.update( System.currentTimeMillis() );
-							String displayText = "Time: " + cd.getCountdownTime();
+							String displayText = "" + cd.getCountdownTime();
 
 							timeDisplay.setText( displayText );
 

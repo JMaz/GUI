@@ -9,7 +9,7 @@ public class Item {
 	private String name;
 	private double price;
 	private int qty;
-	
+
 	/*
 	 * Construct an item with Null default values.
 	 * 
@@ -30,7 +30,7 @@ public class Item {
 		price = p;
 		qty = q;
 	}
-	
+
 	/*
 	 * Return item name.
 	 * 
@@ -39,7 +39,7 @@ public class Item {
 	public String getName(){
 		return name;
 	}
-	
+
 	/*
 	 * Return item price.
 	 * 
@@ -48,16 +48,16 @@ public class Item {
 	public double getPrice(){
 		return price;
 	}
-	
+
 	/*
 	 * Return item quantity.
 	 * 
 	 * @return qty
 	 */
-	public double getQty(){
+	public int getQty(){
 		return qty;
 	}
-	
+
 	/*
 	 * Set item name.
 	 * 
@@ -66,7 +66,7 @@ public class Item {
 	public void setName(String n){
 		name = n;
 	}
-	
+
 	/*
 	 * Set item price.
 	 * 
@@ -75,16 +75,16 @@ public class Item {
 	public void setPrice(double p){
 		price = p;
 	}
-	
+
 	/*
 	 * Set item quantity.
 	 * 
 	 * @param q
 	 */
-	public void setName(int q){
+	public void setQty(int q){
 		qty = q;
 	}
-	
+
 	/*
 	 * Print item object
 	 *
@@ -92,8 +92,8 @@ public class Item {
 	 */
 	public String toString(){
 		String itemString = "Item Name: " + name + "\n"
-							+"Price: " + price + "\n"
-							+"Qty: " + qty + "\n";
+				+"Price: " + price + "\n"
+				+"Qty: " + qty + "\n";
 		return itemString;
 	}
 }
