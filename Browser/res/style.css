@@ -1,0 +1,56 @@
+.root{
+	-fx-background-color: #dddddd;
+}
+
+.menu-bar {
+	-fx-background-color: #dddddd;
+
+}
+
+.menu-bar .label {
+	-fx-font-size: 14 pt;
+	-fx-text-fill: #424242;
+}
+
+.menu:hover {
+	-fx-background-color: #BCBCBC;
+}
+
+.menu-item:select {
+	-fx-background-color: #BCBCBC;
+}
+
+.menu-item .label {
+	-fx-font-size: 14 pt;
+	-fx-text-fill: #424242;
+}
+
+.menu-item:focused {
+	-fx-background-color: #BCBCBC;
+}
+
+.context-menu {
+	-fx-background-color: transparent;
+}
+
+.hbox {
+	-fx-background-color: #dddddd;
+	-fx-boarder-color: #000000;
+}
+
+.button{
+	-fx-background-color: #FF9900;
+-fx-text-fill: #424242;
+}
+
+.tab 
+{
+-fx-background-color: #3299BB;
+-fx-text-fill: #424242;
+}
+
+.tab:hover 
+{
+-fx-background-color: #CFBE27;
+}
+
