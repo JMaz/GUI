@@ -8,16 +8,23 @@
 	-fx-text-fill: #6B824A;
 	-fx-background-image: url("stopwatch.jpg");
 	
+	
 }
 
 
 .button {
-	-fx-background-color: #636563;
-	-fx-text-fill: #D6E3B5;
-	-fx-border-color: #636563;
+	-fx-background-color: #000000;
+	-fx-text-fill: #ffffff;
+	-fx-border-color: #ffffff;
 	
 }
 
 .text{
 	-fx-text-fill: #6B824A;
+
+}
+
+.text1{
+	-fx-text-fill: #6B824A;
+	-fx-font-size: 45 pt;
 }

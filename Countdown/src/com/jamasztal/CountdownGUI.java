@@ -31,7 +31,7 @@ public class CountdownGUI extends Application
 	public void start(final Stage theStage) 
 	{
 		theStage.setTitle("Final Countdown");
-		
+		theStage.setResizable(false);
 		Group root = new Group();
 		Scene theScene = new Scene(root);
 
@@ -64,6 +64,7 @@ public class CountdownGUI extends Application
 		cd.reset();
 
 		Text timeDisplay = new Text("Time Goes Here");
+		timeDisplay.getStyleClass().add("text1");
 
 		Button allButton = new Button();
 		allButton.setText("Words go here");
@@ -117,8 +118,8 @@ public class CountdownGUI extends Application
 		setTimeBox.setAlignment(Pos.CENTER);
 
 		final TextField timeField = new TextField();
-		timeField.setPromptText("Countdown Time");
-
+		timeField.setPromptText("Enter Seconds");
+		timeField.setMaxWidth(105);
 		Button timerSetButton = new Button();
 		timerSetButton.setText("Set");
 		timerSetButton.setOnAction(
@@ -133,10 +134,12 @@ public class CountdownGUI extends Application
 				}
 				);
 
-		setTimeBox.getChildren().addAll( timerSetButton,timeField);
+	//	setTimeBox.getChildren().addAll( timerSetButton,timeField);
 
-		mainBox.getChildren().add(setTimeBox);
+		mainBox.getChildren().addAll(timeField,timerSetButton);
 
+		//mainBox.getChildren().add(setTimeBox);
+		
 		Timeline timey = new Timeline();
 
 		timey.setCycleCount( Timeline.INDEFINITE );
